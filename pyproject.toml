@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling>=1.25.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "top-quant-gits"
+version = "0.1.0"
+description = "Scout recent GitHub repositories across quant, trading, crypto, and Indian options themes."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+  { name = "gkmraju" }
+]
+dependencies = [
+  "httpx>=0.27,<1.0",
+  "python-dotenv>=1.0,<2.0",
+]
+
+[project.scripts]
+top-quant-gits = "top_quant_gits.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["top_quant_gits"]
