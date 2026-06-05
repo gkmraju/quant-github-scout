@@ -12,14 +12,18 @@ on:
         required: false
         default: "5"
   schedule:
-    - cron: "30 3 * * *"
+    - cron: "0 7 * * *"
+      timezone: "Asia/Kolkata"
 
 permissions:
   contents: write
 
 jobs:
   build-digest:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
+    concurrency:
+      group: top-quant-gits-daily
+      cancel-in-progress: false
 
     steps:
       - name: Check out repository
