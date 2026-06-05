@@ -1,6 +1,6 @@
 # Top Quant Gits
 
-_Generated on 2026-06-05 12:21 UTC_
+_Generated on 2026-06-05 12:58 UTC_
 
 Recent GitHub repositories ranked by freshness, traction, activity, and category fit.
 
@@ -30,6 +30,18 @@ Production-grade Jupyter notebooks for quantitative finance on the Vietnamese st
 - Last updated: 2026-06-04
 - Why it stands out: matched quant, quantitative, factor, research
 
+### 3. [mbayad-quant/egyptian-quant-lab](https://github.com/mbayad-quant/egyptian-quant-lab)
+
+Quantitative research and factor investing models for the Egyptian stock market
+
+- Score: 69.65
+- Stars: 0
+- Forks: 0
+- Language: Python
+- Created: 2026-06-04
+- Last updated: 2026-06-05
+- Why it stands out: matched quant, quantitative, factor, research
+
 ## Algo Trading
 
 ### 1. [Liu-Ming-Yu/alpha-forge](https://github.com/Liu-Ming-Yu/alpha-forge)
@@ -55,6 +67,18 @@ Algorithmic trading system for research, backtesting, and live trading via broke
 - Created: 2026-06-05
 - Last updated: 2026-06-05
 - Why it stands out: matched algo, algorithmic, trading, broker
+
+### 3. [0xitsss/quince](https://github.com/0xitsss/quince)
+
+Quince — low-latency algorithmic trading framework. Lua 5.4 strategy runtime, 20+ on-chain indicators, Binance WS/REST connector, crossbeam channels, ULL priority engine loop. Write strategies in Lua, deploy in Rust.
+
+- Score: 71.96
+- Stars: 1
+- Forks: 0
+- Language: Rust
+- Created: 2026-06-02
+- Last updated: 2026-06-05
+- Why it stands out: matched algo, algorithmic, trading, strategy
 
 ## Crypto Trading
 
@@ -82,6 +106,18 @@ Corbitraj is a local crypto arbitrage scanner and trading dashboard. It scans ce
 - Last updated: 2026-06-04
 - Why it stands out: matched crypto, arbitrage, exchange
 
+### 3. [Gestationradiotelescope548/crypto-arbitrage-bot-automated-trading](https://github.com/Gestationradiotelescope548/crypto-arbitrage-bot-automated-trading)
+
+Scan multi-chain markets for price differences and execute automated crypto arbitrage trades across TON, SOL, and EVM networks.
+
+- Score: 63.45
+- Stars: 0
+- Forks: 0
+- Language: Unknown
+- Created: 2026-05-22
+- Last updated: 2026-06-05
+- Why it stands out: matched crypto, defi, arbitrage, exchange
+
 ## Indian Options
 
 ### 1. [vijaybisht7/NiftyOptionSeller](https://github.com/vijaybisht7/NiftyOptionSeller)
@@ -108,6 +144,18 @@ Real-time Nifty 50 & BankNifty options trading intelligence dashboard
 - Last updated: 2026-06-02
 - Why it stands out: matched nifty, banknifty, options
 
+### 3. [Kanha365/NIFTY-Options-Volatility-Surface](https://github.com/Kanha365/NIFTY-Options-Volatility-Surface)
+
+Quantitative hybrid machine learning pipeline for reconstructing the NIFTY50 options volatility surface."
+
+- Score: 63.0
+- Stars: 0
+- Forks: 0
+- Language: Jupyter Notebook
+- Created: 2026-06-05
+- Last updated: 2026-06-05
+- Why it stands out: matched nifty, options
+
 ## Backtesting
 
 ### 1. [Andriano2323/backtester-lab](https://github.com/Andriano2323/backtester-lab)
@@ -133,3 +181,15 @@ An automated financial data pipeline and quantitative analytics engine. Features
 - Created: 2026-06-05
 - Last updated: 2026-06-05
 - Why it stands out: matched backtest, backtesting, engine
+
+### 3. [Jan000/LaplaceTrade](https://github.com/Jan000/LaplaceTrade)
+
+Event-driven, asynchronous crypto trading MVP. Built with Python 3.11+, ccxt, and XGBoost/LightGBM. Features a high-performance backtesting engine, dynamic risk management, and a FastAPI dashboard. Portfolio project.
+
+- Score: 66.9
+- Stars: 0
+- Forks: 0
+- Language: Python
+- Created: 2026-06-02
+- Last updated: 2026-06-04
+- Why it stands out: matched backtest, backtesting, engine, performance

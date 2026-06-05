@@ -76,5 +76,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: top-quant-gits-digest
-          path: output/latest_digest.md
+          path: |
+            output/latest_digest.md
+            output/latest_digest.pdf
+            output/latest_digest.html
           if-no-files-found: error

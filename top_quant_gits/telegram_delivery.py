@@ -18,12 +18,11 @@ class TelegramNotifier:
             timeout=timeout,
         )
 
-    def send_digest(self, digest_path: Path) -> None:
-        if not digest_path.exists():
-            raise TelegramDeliveryError(f"Digest file not found: {digest_path}")
+    def send_document(self, document_path: Path, *, caption: str) -> None:
+        if not document_path.exists():
+            raise TelegramDeliveryError(f"Digest file not found: {document_path}")
 
-        caption = f"Top Quant Gits digest for {datetime.now(UTC).date().isoformat()}"
-        with digest_path.open("rb") as handle:
+        with document_path.open("rb") as handle:
             response = self._client.post(
                 "/sendDocument",
                 data={
@@ -31,7 +30,7 @@ class TelegramNotifier:
                     "caption": caption,
                 },
                 files={
-                    "document": (digest_path.name, handle, "text/markdown"),
+                    "document": (document_path.name, handle, _mime_type_for(document_path)),
                 },
             )
 
@@ -47,3 +46,15 @@ class TelegramNotifier:
 
     def close(self) -> None:
         self._client.close()
+
+
+def default_digest_caption(base_caption: str) -> str:
+    return f"{base_caption} · {datetime.now(UTC).date().isoformat()}"
+
+
+def _mime_type_for(path: Path) -> str:
+    if path.suffix.lower() == ".pdf":
+        return "application/pdf"
+    if path.suffix.lower() == ".html":
+        return "text/html"
+    return "text/markdown"

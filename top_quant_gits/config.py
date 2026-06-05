@@ -12,6 +12,10 @@ class Settings:
     state_file: Path
     telegram_bot_token: str | None
     telegram_chat_id: str | None
+    brand_name: str
+    signature_name: str
+    github_url: str
+    telegram_caption: str
 
 
 def load_settings() -> Settings:
@@ -26,4 +30,14 @@ def load_settings() -> Settings:
         state_file=state_file,
         telegram_bot_token=telegram_bot_token,
         telegram_chat_id=telegram_chat_id,
+        brand_name=os.getenv("TOP_QUANT_GITS_BRAND_NAME", "Top Quant Gits"),
+        signature_name=os.getenv("TOP_QUANT_GITS_SIGNATURE_NAME", "gkmraju"),
+        github_url=os.getenv(
+            "TOP_QUANT_GITS_GITHUB_URL",
+            "https://github.com/gkmraju/quant-github-scout",
+        ),
+        telegram_caption=os.getenv(
+            "TOP_QUANT_GITS_TELEGRAM_CAPTION",
+            "Top Quant Gits branded PDF digest",
+        ),
     )

@@ -9,9 +9,14 @@ from top_quant_gits.categories import DEFAULT_CATEGORIES
 from top_quant_gits.config import load_settings
 from top_quant_gits.digest import build_markdown_digest
 from top_quant_gits.github_client import GitHubClient, GitHubRateLimitError
+from top_quant_gits.publication import render_publication
 from top_quant_gits.ranker import score_repositories
 from top_quant_gits.store import SeenRepoStore
-from top_quant_gits.telegram_delivery import TelegramDeliveryError, TelegramNotifier
+from top_quant_gits.telegram_delivery import (
+    TelegramDeliveryError,
+    TelegramNotifier,
+    default_digest_caption,
+)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -83,6 +88,21 @@ def main() -> None:
     store.save(current_run_seen)
     print(f"Wrote digest to {output_path}")
 
+    publication = render_publication(
+        categories=DEFAULT_CATEGORIES,
+        ranked_repos=ranked_repos,
+        top_n=args.top,
+        output_base=output_path.parent / output_path.stem,
+        brand_name=settings.brand_name,
+        signature_name=settings.signature_name,
+        github_url=settings.github_url,
+    )
+    print(f"Wrote HTML publication to {publication.html_path}")
+    if publication.pdf_path is not None:
+        print(f"Wrote PDF publication to {publication.pdf_path}")
+    else:
+        print("PDF publication could not be rendered because no supported browser was found.")
+
     if args.send_telegram:
         if not settings.telegram_bot_token or not settings.telegram_chat_id:
             raise SystemExit(
@@ -93,7 +113,16 @@ def main() -> None:
             chat_id=settings.telegram_chat_id,
         )
         try:
-            notifier.send_digest(output_path)
+            if publication.pdf_path is not None:
+                notifier.send_document(
+                    publication.pdf_path,
+                    caption=default_digest_caption(settings.telegram_caption),
+                )
+            else:
+                notifier.send_document(
+                    output_path,
+                    caption=default_digest_caption(settings.telegram_caption),
+                )
         except TelegramDeliveryError as error:
             raise SystemExit(str(error)) from error
         finally:

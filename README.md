@@ -29,8 +29,9 @@ top-quant-gits --days 90 --top 5
 ```
 
 The generated digest is written to `output\latest_digest.md`.
+The branded publication is also rendered to `output\latest_digest.html` and `output\latest_digest.pdf`.
 
-To also send the digest to Telegram:
+To also send the branded PDF digest to Telegram:
 
 ```powershell
 top-quant-gits --days 90 --top 5 --send-telegram
@@ -43,7 +44,7 @@ This repo includes a daily GitHub Actions workflow at `.github/workflows/daily-d
 - Scheduled run: every day at `03:30 UTC`
 - Manual run: available from the GitHub Actions tab with optional `days` and `top` inputs
 - Auth: uses `GH_API_TOKEN` when provided, otherwise falls back to the repository's built-in GitHub token
-- Output: commits `output/latest_digest.md` back to the repo when it changes, uploads it as a workflow artifact, prints it in the workflow summary, and sends it to Telegram when Telegram secrets are configured
+- Output: commits `output/latest_digest.md` back to the repo when it changes, uploads the latest Markdown and PDF artifacts, prints the digest in the workflow summary, and sends the branded PDF to Telegram when Telegram secrets are configured
 
 If you want the schedule to align with India time, `03:30 UTC` is `09:00 IST`.
 
@@ -62,6 +63,10 @@ GITHUB_TOKEN=ghp_your_token_here
 GH_API_TOKEN=ghp_your_optional_actions_token_here
 TOP_QUANT_GITS_OUTPUT_DIR=output
 TOP_QUANT_GITS_STATE_FILE=output/seen_repos.json
+TOP_QUANT_GITS_BRAND_NAME=Top Quant Gits
+TOP_QUANT_GITS_SIGNATURE_NAME=gkmraju
+TOP_QUANT_GITS_GITHUB_URL=https://github.com/gkmraju/quant-github-scout
+TOP_QUANT_GITS_TELEGRAM_CAPTION=Top Quant Gits branded PDF digest
 TELEGRAM_BOT_TOKEN=your_telegram_bot_token
 TELEGRAM_CHAT_ID=@your_channel_or_chat_id
 ```
