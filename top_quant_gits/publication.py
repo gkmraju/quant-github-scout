@@ -61,6 +61,7 @@ def _render_html(
     issue_date = datetime.now(UTC).strftime("%Y-%m-%d")
     total_repos = sum(len(ranked_repos.get(category.slug, [])[:top_n]) for category in categories)
     sections = []
+    link_items: list[tuple[str, str]] = []
     for category in categories:
         repos = ranked_repos.get(category.slug, [])[:top_n]
         if not repos:
@@ -73,6 +74,7 @@ def _render_html(
                 """
             )
             continue
+        link_items.extend((repo.full_name, repo.html_url) for repo in repos)
         cards = "\n".join(_render_repo_card(repo, rank=index) for index, repo in enumerate(repos, start=1))
         sections.append(
             f"""
@@ -237,6 +239,13 @@ def _render_html(
         color: var(--accent);
         text-decoration: none;
       }}
+      .repo-url,
+      .direct-link a {{
+        color: var(--accent);
+        text-decoration: none;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }}
       .topics {{
         margin-top: 10px;
         display: flex;
@@ -267,6 +276,25 @@ def _render_html(
         padding: 18px;
         color: var(--muted);
         font-family: Arial, sans-serif;
+      }}
+      .direct-links {{
+        margin-top: 26px;
+        padding-top: 6px;
+        break-before: page;
+      }}
+      .direct-link {{
+        background: rgba(255,253,249,.95);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 12px 14px;
+        margin-bottom: 10px;
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+      }}
+      .direct-link strong {{
+        display: block;
+        color: var(--ink);
+        margin-bottom: 4px;
       }}
     </style>
   </head>
@@ -299,6 +327,11 @@ def _render_html(
       </section>
 
       {''.join(sections)}
+
+      <section class="direct-links">
+        <div class="section-title">Direct Links</div>
+        {''.join(_render_direct_link(name, url) for name, url in link_items)}
+      </section>
 
       <div class="footer">
         Built with <a href="{_escape(github_url)}">{_escape(brand_name)}</a> · {_escape(signature_name)}
@@ -334,13 +367,26 @@ def _render_repo_card(repo: RepoCandidate, *, rank: int) -> str:
         <div class="mini"><span class="label">License:</span> {_escape(repo.license_name or "Unknown")}</div>
         <div class="mini"><span class="label">Repo:</span> <a href="{_escape(repo.html_url)}">Open on GitHub</a></div>
       </div>
+      <div class="mini repo-url" style="margin-top: 8px;">
+        <span class="label">Direct URL:</span>
+        <a href="{_escape(repo.html_url)}">{_escape(repo.html_url)}</a>
+      </div>
       <div class="topics">{topics_html}</div>
       <div class="abstract">{_escape(_compact(repo.description, 520))}</div>
       <div class="links mini" style="margin-top: 10px;">
         <a href="{_escape(repo.html_url)}">GitHub</a> ·
-        <span>Links remain clickable in the PDF</span>
+        <span>Direct URL included for viewer fallback</span>
       </div>
     </article>
+    """
+
+
+def _render_direct_link(name: str, url: str) -> str:
+    return f"""
+    <div class="direct-link">
+      <strong>{_escape(name)}</strong>
+      <a href="{_escape(url)}">{_escape(url)}</a>
+    </div>
     """
 
 

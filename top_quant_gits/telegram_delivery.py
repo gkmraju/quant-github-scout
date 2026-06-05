@@ -44,6 +44,25 @@ class TelegramNotifier:
                 "Telegram delivery was rejected by the Telegram API. Verify bot access to the target chat."
             )
 
+    def send_message(self, text: str) -> None:
+        response = self._client.post(
+            "/sendMessage",
+            data={
+                "chat_id": self._chat_id,
+                "text": text,
+                "disable_web_page_preview": "true",
+            },
+        )
+        if response.status_code >= 400:
+            raise TelegramDeliveryError(
+                "Telegram link message failed. Check TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, and bot access."
+            )
+        payload = response.json()
+        if not payload.get("ok"):
+            raise TelegramDeliveryError(
+                "Telegram rejected the link message. Verify bot access to the target chat."
+            )
+
     def close(self) -> None:
         self._client.close()
 

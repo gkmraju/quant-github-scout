@@ -53,3 +53,28 @@ def build_markdown_digest(
             )
 
     return "\n".join(lines).strip() + "\n"
+
+
+def build_telegram_link_digest(
+    *,
+    categories: list[CategoryQuery],
+    ranked_repos: dict[str, list[RepoCandidate]],
+    top_n: int,
+) -> str:
+    lines = [
+        "Top Quant Gits",
+        f"Date: {datetime.now(UTC).strftime('%Y-%m-%d')}",
+        "",
+        "Direct repo links:",
+        "",
+    ]
+    for category in categories:
+        repos = ranked_repos.get(category.slug, [])[:top_n]
+        if not repos:
+            continue
+        lines.append(category.title)
+        for repo in repos:
+            lines.append(f"- {repo.full_name}")
+            lines.append(f"  {repo.html_url}")
+        lines.append("")
+    return "\n".join(lines).strip()

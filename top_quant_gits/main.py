@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 from top_quant_gits.categories import DEFAULT_CATEGORIES
 from top_quant_gits.config import load_settings
-from top_quant_gits.digest import build_markdown_digest
+from top_quant_gits.digest import build_markdown_digest, build_telegram_link_digest
 from top_quant_gits.github_client import GitHubClient, GitHubRateLimitError
 from top_quant_gits.publication import render_publication
 from top_quant_gits.ranker import score_repositories
@@ -113,6 +113,13 @@ def main() -> None:
             chat_id=settings.telegram_chat_id,
         )
         try:
+            notifier.send_message(
+                build_telegram_link_digest(
+                    categories=DEFAULT_CATEGORIES,
+                    ranked_repos=ranked_repos,
+                    top_n=args.top,
+                )
+            )
             if publication.pdf_path is not None:
                 notifier.send_document(
                     publication.pdf_path,
