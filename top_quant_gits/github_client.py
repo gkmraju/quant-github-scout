@@ -7,6 +7,10 @@ import httpx
 from top_quant_gits.models import CategoryQuery, RepoCandidate
 
 
+class GitHubRateLimitError(RuntimeError):
+    """Raised when the GitHub API rate limit blocks a request."""
+
+
 class GitHubClient:
     def __init__(self, token: str | None = None, timeout: float = 20.0) -> None:
         headers = {
@@ -48,6 +52,10 @@ class GitHubClient:
                     "per_page": per_query_limit,
                 },
             )
+            if response.status_code == 403 and "rate limit" in response.text.lower():
+                raise GitHubRateLimitError(
+                    "GitHub Search API rate limit exceeded. Add GH_API_TOKEN or GITHUB_TOKEN to .env and try again."
+                )
             response.raise_for_status()
             payload = response.json()
 

@@ -8,9 +8,10 @@ from dotenv import load_dotenv
 from top_quant_gits.categories import DEFAULT_CATEGORIES
 from top_quant_gits.config import load_settings
 from top_quant_gits.digest import build_markdown_digest
-from top_quant_gits.github_client import GitHubClient
+from top_quant_gits.github_client import GitHubClient, GitHubRateLimitError
 from top_quant_gits.ranker import score_repositories
 from top_quant_gits.store import SeenRepoStore
+from top_quant_gits.telegram_delivery import TelegramDeliveryError, TelegramNotifier
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -34,6 +35,11 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Skip repositories that were already saved in the local seen list.",
     )
+    parser.add_argument(
+        "--send-telegram",
+        action="store_true",
+        help="Send the generated digest to Telegram using TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID.",
+    )
     return parser
 
 
@@ -51,17 +57,20 @@ def main() -> None:
 
     client = GitHubClient(token=settings.github_token)
     try:
-        for category in DEFAULT_CATEGORIES:
-            repos = client.search_recent_repositories(
-                category,
-                lookback_days=args.days,
-                per_query_limit=args.per_query_limit,
-            )
-            if args.exclude_seen:
-                repos = [repo for repo in repos if repo.full_name not in seen_repos]
-            ranked = score_repositories(category, repos)
-            ranked_repos[category.slug] = ranked
-            current_run_seen.update(repo.full_name for repo in ranked[: args.top])
+        try:
+            for category in DEFAULT_CATEGORIES:
+                repos = client.search_recent_repositories(
+                    category,
+                    lookback_days=args.days,
+                    per_query_limit=args.per_query_limit,
+                )
+                if args.exclude_seen:
+                    repos = [repo for repo in repos if repo.full_name not in seen_repos]
+                ranked = score_repositories(category, repos)
+                ranked_repos[category.slug] = ranked
+                current_run_seen.update(repo.full_name for repo in ranked[: args.top])
+        except GitHubRateLimitError as error:
+            raise SystemExit(str(error)) from error
     finally:
         client.close()
 
@@ -73,6 +82,23 @@ def main() -> None:
     output_path.write_text(digest, encoding="utf-8")
     store.save(current_run_seen)
     print(f"Wrote digest to {output_path}")
+
+    if args.send_telegram:
+        if not settings.telegram_bot_token or not settings.telegram_chat_id:
+            raise SystemExit(
+                "Telegram delivery requested, but TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID is missing."
+            )
+        notifier = TelegramNotifier(
+            bot_token=settings.telegram_bot_token,
+            chat_id=settings.telegram_chat_id,
+        )
+        try:
+            notifier.send_digest(output_path)
+        except TelegramDeliveryError as error:
+            raise SystemExit(str(error)) from error
+        finally:
+            notifier.close()
+        print("Sent digest to Telegram")
 
 
 if __name__ == "__main__":
