@@ -12,8 +12,8 @@ on:
         required: false
         default: "5"
   schedule:
-    - cron: "0 7 * * *"
-      timezone: "Asia/Kolkata"
+    # Pin directly in UTC so the workflow fires reliably at 7:00 AM IST.
+    - cron: "30 1 * * *"
 
 permissions:
   contents: write

@@ -41,13 +41,13 @@ top-quant-gits --days 90 --top 5 --send-telegram
 
 This repo includes a daily GitHub Actions workflow at `.github/workflows/daily-digest.yml`.
 
-- Scheduled run: every day at `03:30 UTC`
+- Scheduled run: every day at `01:30 UTC` (`07:00 IST`)
 - Manual run: available from the GitHub Actions tab with optional `days` and `top` inputs
 - Auth: uses `GH_API_TOKEN` when provided, otherwise falls back to the repository's built-in GitHub token
 - Output: commits `output/latest_digest.md` back to the repo when it changes, uploads the latest Markdown and PDF artifacts, prints the digest in the workflow summary, and sends the branded PDF to Telegram when Telegram secrets are configured
 - Telegram behavior: a companion text message with direct clickable repo URLs is sent before the PDF, because some in-app PDF viewers do not honor PDF link taps consistently even when the PDF contains valid link annotations
 
-If you want the schedule to align with India time, `03:30 UTC` is `09:00 IST`.
+The workflow cron is pinned directly to `01:30 UTC` so it lands at `07:00 IST`.
 
 To enable Telegram delivery from GitHub Actions, add these repository secrets:
 
