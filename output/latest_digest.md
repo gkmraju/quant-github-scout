@@ -1,70 +1,70 @@
 # Top Quant Gits
 
-_Generated on 2026-07-04 05:24 UTC_
+_Generated on 2026-07-05 05:42 UTC_
 
 Recent GitHub repositories ranked by freshness, traction, activity, and category fit.
 
 ## Quant Research
 
-### 1. [VarunSingh022/AlphaLab](https://github.com/VarunSingh022/AlphaLab)
+### 1. [AaroNLaU0307/multi-asset-tsmom-research](https://github.com/AaroNLaU0307/multi-asset-tsmom-research)
 
-Institutional-grade event-driven quantitative trading framework for research, backtesting, optimization, analytics, live market infrastructure, and broker integration. Built with immutable architecture, deterministic execution, and strict typing.
+A falsification-first quant research project: a confirmed multi-asset TSMOM core, then four overlays (crash-defense, vol-breakout, seasonality, yield-curve regime) and a cross-sectional momentum (XSMOM) counterpart — all systematically tested and honestly rejected, each with a mechanism. Paired-bootstrap + BH-FDR throughout.
 
-- Score: 68.25
-- Stars: 0
-- Forks: 0
-- Language: Python
-- Created: 2026-06-28
-- Last updated: 2026-07-04
-- Why it stands out: matched quant, quantitative, alpha, research
-
-### 2. [woshicaiji0629/AlphaFlow](https://github.com/woshicaiji0629/AlphaFlow)
-
-An AI-powered quantitative trading research platform.
-
-- Score: 67.86
+- Score: 67.36
 - Stars: 1
 - Forks: 0
-- Language: Go
-- Created: 2026-06-24
-- Last updated: 2026-07-04
-- Why it stands out: matched quant, quantitative, alpha, research
-
-### 3. [Azulzal/quantitative-trading-research-platform](https://github.com/Azulzal/quantitative-trading-research-platform)
-
-Python-based quantitative trading research platform for collecting market data, backtesting systematic strategies, and evaluating performance.
-
-- Score: 67.15
-- Stars: 0
-- Forks: 0
-- Language: Jupyter Notebook
-- Created: 2026-07-02
+- Language: Python
+- Created: 2026-06-25
 - Last updated: 2026-07-04
 - Why it stands out: matched quant, quantitative, research
 
-### 4. [laozdao/dao-quant-research](https://github.com/laozdao/dao-quant-research)
+### 2. [TingdeLiu/quant.ai](https://github.com/TingdeLiu/quant.ai)
 
-道·量化研究：83篇A股市量化分析研究文章，基于双引擎四层融合模型 | Dao Quant Research: 83 A-share quantitative analysis articles with dual-engine fusion model
+US-equity quant research that lives inside your AI assistant (Claude/Codex via MCP): explainable ratings, key levels & daily briefs from one command. CLI + MCP, bilingual EN / 中文.
 
-- Score: 65.14
-- Stars: 7
-- Forks: 1
-- Language: Unknown
-- Created: 2026-05-20
-- Last updated: 2026-07-03
-- Why it stands out: matched quant, quantitative, factor, research
+- Score: 67.01
+- Stars: 1
+- Forks: 0
+- Language: Python
+- Created: 2026-06-25
+- Last updated: 2026-07-05
+- Why it stands out: matched quant, quantitative, research
 
-### 5. [sycaocong/SmartX-quant-trading](https://github.com/sycaocong/SmartX-quant-trading)
+### 3. [Daksh-QE/quantum-research-archive](https://github.com/Daksh-QE/quantum-research-archive)
 
-SmartX Quant Trading System - microservice-based A-share quantitative trading platform
+A comprehensive quantum computing & mechanics research archive with 24 modules, 181 lessons, and curated resources.
 
-- Score: 65.0
+- Score: 66.97
+- Stars: 2
+- Forks: 0
+- Language: TypeScript
+- Created: 2026-06-26
+- Last updated: 2026-07-04
+- Why it stands out: matched quant, research
+
+### 4. [pengxiangsang/CodexQuant](https://github.com/pengxiangsang/CodexQuant)
+
+React and Python quantitative trading research platform
+
+- Score: 65.5
 - Stars: 0
 - Forks: 0
-- Language: Go
+- Language: Python
 - Created: 2026-07-04
-- Last updated: 2026-07-04
-- Why it stands out: matched quant, quantitative
+- Last updated: 2026-07-05
+- Why it stands out: matched quant, quantitative, research
+
+### 5. [doverradio/omnitrade-legacy-engine](https://github.com/doverradio/omnitrade-legacy-engine)
+
+AI-assisted quantitative trading research and paper-trading platform.
+
+- Score: 65.15
+- Stars: 0
+- Forks: 0
+- Language: Python
+- Created: 2026-07-03
+- Last updated: 2026-07-05
+- Why it stands out: matched quant, quantitative, research
 
 ## Algo Trading
 
@@ -72,61 +72,61 @@ SmartX Quant Trading System - microservice-based A-share quantitative trading pl
 
 MQL5 Algorithmic Trading Scripts 2026 – Automated MT5 Strategies
 
-- Score: 85.57
+- Score: 85.22
 - Stars: 151
 - Forks: 0
 - Language: HTML
 - Created: 2026-06-28
-- Last updated: 2026-07-04
+- Last updated: 2026-07-05
 - Why it stands out: matched algo, algorithmic, trading
 
-### 2. [afrodynamic/omnitrade](https://github.com/afrodynamic/omnitrade)
+### 2. [egogoboy/backtesting_system](https://github.com/egogoboy/backtesting_system)
 
-Objective algorithmic trading framework
+Event-driven algorithmic trading backtesting engine in modern C++ with realistic execution simulation and modular architecture. 📈
 
-- Score: 67.5
+- Score: 66.6
+- Stars: 0
+- Forks: 0
+- Language: C++
+- Created: 2026-07-01
+- Last updated: 2026-07-05
+- Why it stands out: matched algo, algorithmic, trading, execution
+
+### 3. [zxyaditya/Atlas](https://github.com/zxyaditya/Atlas)
+
+A quantitative research framework for systematic trading under Vorien.
+
+- Score: 65.5
 - Stars: 0
 - Forks: 0
 - Language: Python
-- Created: 2026-07-03
+- Created: 2026-07-04
 - Last updated: 2026-07-04
 - Why it stands out: matched algo, algorithmic, trading
 
-### 3. [nirupam9609-del/juno-binance-margin-bot-ultimate](https://github.com/nirupam9609-del/juno-binance-margin-bot-ultimate)
+### 4. [shtylenko/trading](https://github.com/shtylenko/trading)
 
-2026 Juno Binance Bot Automated Margin Algorithmic Trading System
-
-- Score: 63.05
-- Stars: 0
-- Forks: 0
-- Language: HTML
-- Created: 2026-06-26
-- Last updated: 2026-07-04
-- Why it stands out: matched algo, algorithmic, trading
-
-### 4. [rjav1/momentum-strategy-studio](https://github.com/rjav1/momentum-strategy-studio)
-
-Full-stack systematic trading workbench (Electron + Next.js + FastAPI): momentum/high-tight-flag screener and an event-driven backtester with Sharpe/drawdown/profit-factor metrics and animated trade replay.
+Systematic trading research + execution monorepo: marketdata, lab, live
 
 - Score: 63.0
 - Stars: 0
 - Forks: 0
 - Language: Python
 - Created: 2026-07-04
-- Last updated: 2026-07-04
-- Why it stands out: matched trading, strategy
+- Last updated: 2026-07-05
+- Why it stands out: matched trading, execution
 
-### 5. [Vixoqz/vnpy](https://github.com/Vixoqz/vnpy)
+### 5. [nirupam9609-del/juno-binance-margin-bot-ultimate](https://github.com/nirupam9609-del/juno-binance-margin-bot-ultimate)
 
-vnpy (VeighNa): an open-source quantitative trading framework in Python. Build, backtest and run algorithmic trading strategies across futures, stocks, options and crypto through a unified gateway API.
+2026 Juno Binance Bot Automated Margin Algorithmic Trading System
 
-- Score: 61.81
-- Stars: 1
+- Score: 62.7
+- Stars: 0
 - Forks: 0
-- Language: Jupyter Notebook
-- Created: 2026-06-01
-- Last updated: 2026-07-04
-- Why it stands out: matched algo, algorithmic, trading, strategy
+- Language: HTML
+- Created: 2026-06-26
+- Last updated: 2026-07-05
+- Why it stands out: matched algo, algorithmic, trading
 
 ## Crypto Trading
 
@@ -134,19 +134,31 @@ vnpy (VeighNa): an open-source quantitative trading framework in Python. Build, 
 
 DEXTools Premium is a professional DeFi trading analytics and pair exploration solution for Windows with the Complete Edition delivering every premium module and advanced capability enabled. Full feature access with no usage limits — Enterprise Setup supports installation and download for production workflows.
 
-- Score: 73.11
+- Score: 72.76
 - Stars: 26
 - Forks: 0
 - Language: Unknown
 - Created: 2026-06-21
-- Last updated: 2026-07-03
+- Last updated: 2026-07-04
 - Why it stands out: matched crypto, defi
 
-### 2. [Lisa1637dev/btc-arbitrage-trading-bot](https://github.com/Lisa1637dev/btc-arbitrage-trading-bot)
+### 2. [Akashpandey1970/crowdwisdom-crypto-agent](https://github.com/Akashpandey1970/crowdwisdom-crypto-agent)
+
+A production-grade multi-agent crypto arbitrage & prediction platform built with the Hermes Agent framework. Sourced programmatically via Apify, the system uses the Kronos Time-Series Foundation Model to predict 5-minute close trends on BTC/ETH, sizing position allocations across Polymarket and Kalshi using the fractional Kelly Criterion.
+
+- Score: 65.0
+- Stars: 0
+- Forks: 0
+- Language: Python
+- Created: 2026-07-04
+- Last updated: 2026-07-04
+- Why it stands out: matched crypto, arbitrage
+
+### 3. [Lisa1637dev/btc-arbitrage-trading-bot](https://github.com/Lisa1637dev/btc-arbitrage-trading-bot)
 
 Python-based crypto arbitrage bot that monitors price spreads across exchanges, sends alerts, and supports automated trading based on configurable thresholds.
 
-- Score: 64.9
+- Score: 64.15
 - Stars: 0
 - Forks: 0
 - Language: JavaScript
@@ -154,11 +166,11 @@ Python-based crypto arbitrage bot that monitors price spreads across exchanges, 
 - Last updated: 2026-06-30
 - Why it stands out: matched crypto, arbitrage, exchange
 
-### 3. [sosuri-ucsd/kalshi-crypto-bot](https://github.com/sosuri-ucsd/kalshi-crypto-bot)
+### 4. [sosuri-ucsd/kalshi-crypto-bot](https://github.com/sosuri-ucsd/kalshi-crypto-bot)
 
 Kalshi crypto arbitrage bot: GBM + AP signal, Kelly sizing, live paper trading
 
-- Score: 64.51
+- Score: 63.76
 - Stars: 1
 - Forks: 0
 - Language: Python
@@ -166,11 +178,11 @@ Kalshi crypto arbitrage bot: GBM + AP signal, Kelly sizing, live paper trading
 - Last updated: 2026-07-01
 - Why it stands out: matched crypto, arbitrage
 
-### 4. [paishdan-prog/Jolly-Arbitrage-Scanner](https://github.com/paishdan-prog/Jolly-Arbitrage-Scanner)
+### 5. [paishdan-prog/Jolly-Arbitrage-Scanner](https://github.com/paishdan-prog/Jolly-Arbitrage-Scanner)
 
 Find profitable crypto arbitrage opportunities across exchanges.
 
-- Score: 64.0
+- Score: 63.25
 - Stars: 0
 - Forks: 0
 - Language: HTML
@@ -178,25 +190,13 @@ Find profitable crypto arbitrage opportunities across exchanges.
 - Last updated: 2026-07-02
 - Why it stands out: matched crypto, arbitrage, exchange
 
-### 5. [imapti/crypto-arbitrage-cli-python](https://github.com/imapti/crypto-arbitrage-cli-python)
-
-Free Python CLI tool for tracking crypto arbitrage and spreads in real-time. Fetches live data from MEXC and OKX
-
-- Score: 63.0
-- Stars: 0
-- Forks: 0
-- Language: Python
-- Created: 2026-07-03
-- Last updated: 2026-07-03
-- Why it stands out: matched crypto, arbitrage
-
 ## Indian Options
 
 ### 1. [sonalmisraa/options-analytics-engine](https://github.com/sonalmisraa/options-analytics-engine)
 
 Django-based NIFTY options analytics platform for implied volatility, Greeks calculation, and multi-leg strategy backtesting.
 
-- Score: 65.0
+- Score: 64.25
 - Stars: 0
 - Forks: 0
 - Language: Jupyter Notebook
@@ -208,7 +208,7 @@ Django-based NIFTY options analytics platform for implied volatility, Greeks cal
 
 Single-file NSE option-chain dashboard (NIFTY/BANKNIFTY): chain, Live OI, Trending OI, LTP Calc + live cookie-bootstrap proxy
 
-- Score: 64.25
+- Score: 63.5
 - Stars: 0
 - Forks: 0
 - Language: HTML
@@ -216,11 +216,23 @@ Single-file NSE option-chain dashboard (NIFTY/BANKNIFTY): chain, Live OI, Trendi
 - Last updated: 2026-06-28
 - Why it stands out: matched nifty, banknifty, nse, options
 
-### 3. [hacker1ravan/parth-ai-sniper](https://github.com/hacker1ravan/parth-ai-sniper)
+### 3. [investmentplan73-png/tradesoftware](https://github.com/investmentplan73-png/tradesoftware)
+
+📈 Free Nifty, Bank Nifty & Stock Market Trading Signals | 15 Days Free Trial | WhatsApp + Telegram Free stock market trading signals India. Nifty options, Bank Nifty calls, stock options, cash delivery signals. 15 days free trial. Join via WhatsApp or Telegram.
+
+- Score: 63.0
+- Stars: 0
+- Forks: 0
+- Language: HTML
+- Created: 2026-07-05
+- Last updated: 2026-07-05
+- Why it stands out: matched nifty, options
+
+### 4. [hacker1ravan/parth-ai-sniper](https://github.com/hacker1ravan/parth-ai-sniper)
 
 AI-powered NIFTY Options Trading Assistant
 
-- Score: 63.0
+- Score: 62.25
 - Stars: 0
 - Forks: 0
 - Language: Unknown
@@ -228,11 +240,11 @@ AI-powered NIFTY Options Trading Assistant
 - Last updated: 2026-07-03
 - Why it stands out: matched nifty, options
 
-### 4. [ykumbhkar224/stock-dashboard](https://github.com/ykumbhkar224/stock-dashboard)
+### 5. [ykumbhkar224/stock-dashboard](https://github.com/ykumbhkar224/stock-dashboard)
 
 Indian Stock Swing Trading Dashboard — NSE scanner, Nifty options signals, EMA crossover detector
 
-- Score: 61.95
+- Score: 61.2
 - Stars: 0
 - Forks: 0
 - Language: HTML
@@ -240,25 +252,13 @@ Indian Stock Swing Trading Dashboard — NSE scanner, Nifty options signals, EMA
 - Last updated: 2026-07-02
 - Why it stands out: matched nifty, nse, options
 
-### 5. [varunmittu/fluno-trading-bot](https://github.com/varunmittu/fluno-trading-bot)
-
-Automated NIFTY Options Trading Bot + Live Dashboard
-
-- Score: 61.6
-- Stars: 0
-- Forks: 0
-- Language: Python
-- Created: 2026-06-29
-- Last updated: 2026-07-03
-- Why it stands out: matched nifty, options
-
 ## Backtesting
 
 ### 1. [jayantrana88/backtesting_engine](https://github.com/jayantrana88/backtesting_engine)
 
 A modular, event-driven backtesting engine for quantitative traders in Python. Build strategies easily using decorator-based API. Features realistic bar-by-bar execution, fractional shares, 28+ institutional metrics, and interactive HTML charts.
 
-- Score: 73.27
+- Score: 72.52
 - Stars: 2
 - Forks: 0
 - Language: Python
@@ -266,50 +266,50 @@ A modular, event-driven backtesting engine for quantitative traders in Python. B
 - Last updated: 2026-07-01
 - Why it stands out: matched backtest, backtesting, engine, metrics
 
-### 2. [Aaron24-gif/python-backtesting-framework](https://github.com/Aaron24-gif/python-backtesting-framework)
+### 2. [ELMEHDI0/statarb-lab](https://github.com/ELMEHDI0/statarb-lab)
 
-Event-driven backtesting framework for trading strategies (Python, Pandas, NumPy) - lookahead-bias controls, bootstrap confidence intervals, prop-firm simulator, risk analytics.
+Institutional-style statistical arbitrage research platform featuring cointegration analysis, event-driven backtesting, execution simulation, portfolio management, risk controls, and performance analytics.
 
-- Score: 66.51
-- Stars: 1
-- Forks: 0
-- Language: Python
-- Created: 2026-07-01
-- Last updated: 2026-07-01
-- Why it stands out: matched backtest, backtesting
-
-### 3. [Backtest360/backtest360-mcp](https://github.com/Backtest360/backtest360-mcp)
-
-MCP server exposing the Backtest360 backtesting engine as tools for AI agents
-
-- Score: 66.1
+- Score: 70.0
 - Stars: 0
 - Forks: 0
 - Language: Python
-- Created: 2026-06-29
-- Last updated: 2026-07-03
-- Why it stands out: matched backtest, backtesting, engine
+- Created: 2026-07-05
+- Last updated: 2026-07-05
+- Why it stands out: matched backtest, backtesting, simulation, performance
 
-### 4. [dragonshithq-prog/forex-ai-trading-system](https://github.com/dragonshithq-prog/forex-ai-trading-system)
+### 3. [dzand-cmd/statistical-arbitrage-backtester](https://github.com/dzand-cmd/statistical-arbitrage-backtester)
 
-AI-powered institutional-grade forex trading platform with 9 AI agents, multi-broker support, risk engine, and event-driven backtesting
+Built a statistical arbitrage backtesting engine that identifies tradable pairs using correlation and cointegration, generates z-score mean-reversion signals, and simulates trading strategies with realistic execution assumptions. Evaluates performance using Sharpe ratio, drawdown, and returns.
 
-- Score: 64.9
+- Score: 68.0
 - Stars: 0
 - Forks: 0
 - Language: Python
-- Created: 2026-06-29
-- Last updated: 2026-06-30
-- Why it stands out: matched backtest, backtesting, engine
+- Created: 2026-07-05
+- Last updated: 2026-07-05
+- Why it stands out: matched backtest, backtesting, engine, performance
 
-### 5. [cauchy481/AlphaForge](https://github.com/cauchy481/AlphaForge)
+### 4. [DiyaHussein/rust-quant-engine](https://github.com/DiyaHussein/rust-quant-engine)
 
-Personal A-share factor research & backtesting framework: IC analysis, neutralization, multi-factor combination, event-driven backtest
+High-performance event-driven backtesting engine in Rust with Python bindings
 
-- Score: 64.84
-- Stars: 4
+- Score: 68.0
+- Stars: 0
 - Forks: 0
-- Language: Python
-- Created: 2026-06-16
-- Last updated: 2026-06-30
-- Why it stands out: matched backtest, backtesting
+- Language: Rust
+- Created: 2026-07-04
+- Last updated: 2026-07-04
+- Why it stands out: matched backtest, backtesting, engine, performance
+
+### 5. [relatablehooper/equity-backtester](https://github.com/relatablehooper/equity-backtester)
+
+Vectorized Python backtesting engine for US equities and ETFs with transaction costs and lookahead bias prevention.
+
+- Score: 67.5
+- Stars: 0
+- Forks: 0
+- Language: Unknown
+- Created: 2026-07-05
+- Last updated: 2026-07-05
+- Why it stands out: matched backtest, backtesting, engine
