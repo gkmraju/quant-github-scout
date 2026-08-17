@@ -101,3 +101,12 @@ This project does not use raw creation time alone. It combines:
 - Basic quality signals
 
 That keeps the digest closer to "top recent repos worth noticing" instead of "the last five repos someone created".
+
+## Validation
+
+The pull-request workflow verifies deterministic ranking, digest, category, and seen-repository behavior without calling GitHub or Telegram:
+
+```powershell
+python -m unittest discover -s tests -v
+python -m compileall -q top_quant_gits tests
+```

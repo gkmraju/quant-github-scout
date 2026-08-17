@@ -6,8 +6,14 @@ from math import log10
 from top_quant_gits.models import CategoryQuery, RepoCandidate
 
 
-def score_repositories(category: CategoryQuery, repos: list[RepoCandidate]) -> list[RepoCandidate]:
-    now = datetime.now(UTC)
+def score_repositories(
+    category: CategoryQuery,
+    repos: list[RepoCandidate],
+    *,
+    now: datetime | None = None,
+) -> list[RepoCandidate]:
+    """Score repositories using a stable clock when one is supplied."""
+    reference_time = now or datetime.now(UTC)
 
     for repo in repos:
         haystack = " ".join(
@@ -18,8 +24,8 @@ def score_repositories(category: CategoryQuery, repos: list[RepoCandidate]) -> l
             ]
         )
         matched_keywords = [word for word in category.keywords if word.lower() in haystack]
-        age_days = max((now - repo.created_at).days, 0)
-        idle_days = max((now - repo.pushed_at).days, 0)
+        age_days = max((reference_time - repo.created_at).days, 0)
+        idle_days = max((reference_time - repo.pushed_at).days, 0)
 
         freshness = max(0.0, 35.0 - age_days * 0.35)
         traction = min(25.0, log10(repo.stars + 1) * 10.0 + log10(repo.forks + 1) * 5.0)
