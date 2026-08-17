@@ -10,12 +10,13 @@ def build_markdown_digest(
     categories: list[CategoryQuery],
     ranked_repos: dict[str, list[RepoCandidate]],
     top_n: int,
+    generated_at: datetime | None = None,
 ) -> str:
-    generated_at = datetime.now(UTC).strftime("%Y-%m-%d %H:%M UTC")
+    generated_at_text = (generated_at or datetime.now(UTC)).strftime("%Y-%m-%d %H:%M UTC")
     lines = [
         "# Top Quant Gits",
         "",
-        f"_Generated on {generated_at}_",
+        f"_Generated on {generated_at_text}_",
         "",
         "Recent GitHub repositories ranked by freshness, traction, activity, and category fit.",
         "",
@@ -60,10 +61,11 @@ def build_telegram_link_digest(
     categories: list[CategoryQuery],
     ranked_repos: dict[str, list[RepoCandidate]],
     top_n: int,
+    generated_at: datetime | None = None,
 ) -> str:
     lines = [
         "Top Quant Gits",
-        f"Date: {datetime.now(UTC).strftime('%Y-%m-%d')}",
+        f"Date: {(generated_at or datetime.now(UTC)).strftime('%Y-%m-%d')}",
         "",
         "Direct repo links:",
         "",
